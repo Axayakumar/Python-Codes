@@ -1,0 +1,1908 @@
+﻿--> https://github.com/neoaman/Assignments_ExcelR_Solutions/tree/master/Text%20Mining --- Assignmnents
+https://www.geeksforgeeks.org/python-programming-language/
+---> https://www.kaggle.com/vipulgandhi/statistics-for-every-data-scientist --- Learn data science statistics
+---> https://github.com/tyz910/hse-shad-ml -- GITT examples
+--https://www.youtube.com/watch?v=eFdPGpny_hY  ---> projects
+
+learn web scrolling and re module from URL : - https://www.youtube.com/watch?v=b76SNj2Dej0&t=19871s
+--- https://realpython.com
+
+--- Intervie prepraration & Python codes -https://github.com/vprusso/youtube_tutorials
+-----------------------------------------------------------------
+To Learn
+1. regular expressions
+1. COnfidence interval, central limit therom, Z-score, T-Score
+  PPF – percentage point function(Inverse cumulative distribution function)
+- https://www.youtube.com/watch?v=s2OTYshfqyk
+
+2. Libraries - Numpy, pandas(dataframe & Data serie), Viualization Libraries(Matplotlib & seaborn), sklearn
+3. feature engineering
+4. Normal distribution, standard Normal Distribution, Log Normal Distribution
+5. How to handel missing values
+6. Mean, Mode, median, IQR, Percentile, ebilefs in quality, central limits therom
+7. Probability denity Function
+8. explortory data analysys - uderstand whether data i descrete or continuous or catogorical, how to handle categorical variable to get good reult.
+9. caling down data - (min max scala & standard scala)
+10. Lgorithams(understand math behind it) - (Linear regression, Lasso regression, rig Regression, logistic regression, desision tree regression classifier, random forest regression classifier,
+	adaboost regression classifier, exiboot regression classifier)
+11. Deployment(flask & jango)
+12. Deep learning (Artificial neural network, convensional neural neywork, recurring neurol network)
+13. libraries(tensorflow, keros, pytorch)
+14.  
+-----------------------------------------------------------
+> Python data types
+
+1. Mutable : we can update, insert, append, add, remove {LIsT, DICT}
+2. Immutable : we cannot do anythong  {TUPLE} -- we can add 2 TUPLE or remove
+
+#LISTS
+my_list = [1,2,3,4,5]
+for i in my_list:
+    print (i)
+
+list1 = ['abhi', 'axay', 111, 222]
+list2 = [1,2,3,4,5]
+list2 = ['a','b','c','d','e']
+print (list1)
+print (list1[0])
+print (list1[0:-1])
+list1.append('333')
+print (list1)
+list1.pop()  #remove last value from last
+print (list1)
+list1.pop(2)  #remove 2nd value from last
+print (list1)
+list1.insert(0,'hema')  #it always take 2 arguements
+list1.insert(8,'333')  #it always take 2 arguements
+print (list1)
+
+o/p:- 
+['abhi', 'axay', 111, 222]
+abhi
+['abhi', 'axay', 111]
+['abhi', 'axay', 111, 222, '333']
+['abhi', 'axay', 111, 222]
+['abhi', 'axay', 222]
+['hema', 'abhi', 'axay', 222, '333']
+
+#TUPLE
+my_tuple = [10,20,30,40,50]
+for i in my_tuple:
+    print (i)
+
+#DICT
+my_dict = {'name':'akshay','age':25, 'occupation':'enginner', 'sal':40000}
+for key,val in my_dict.iteritems():
+    print "my {} is {}".format(key,val) 
+
+#SET
+my_set = {10,20,30,40,40,50,30,20,10}
+for i in my_set:
+    print (i)    
+----------------------------------------------------------------
+> To get the current directory
+import os
+os.getcwd()
+------------------------------------------------------------
+>
+a = 9
+print(a)
+a = 'akshay'
+print(a)
+
+o/p:- 9
+akshay
+
+-------------------------
+> 
+name = 'hanuman'
+print(name)
+print(name[0])
+print(name[:1])
+print(name[1:5])
+print(name[-1])
+print(name[-3:-1])
+print(name[2:2])   ---- 1t number should be leer than econd number, else it will not give output
+print(name[3:1])   ---- 1t number should be leer than econd number, else it will not give output
+
+0/p:- 
+hanuman
+h
+h
+anum
+n
+ma
+--------------------------------------------------------------------
+> #Updating string
+string = 'Hello World'
+print('Updating string :=', string + ' python')
+print('Updating string :=', string[:6] +' python')
+
+o/p:- Updating string := Hello World python
+Updating string := Hello  python
+--------------------------------------------------------------
+> #string Formatting
+print("My name is %s and my weight i %d kg!" %('akshay', 25))
+
+o/p:- My name is akshay and my weight i 25 kg!
+
+> name = input('enter your name:= ')
+weight = eval(input('enter your weight:= '))
+print("My name is %s and my weight i %d kg!" %(name, weight))
+
+o/p:- enter your name:= abhinadan
+enter your weight:= 25
+My name is abhinadan and my weight i 25 kg!
+
+>name = "abhinandan"
+print(name.capitalize())
+print(name.center(50))
+print(name.count('a'))  
+
+o/p:- Abhinandan
+                    abhinandan                    
+3
+
+>
+name = "abhinandan is a farmer and he is good boy"
+print(name.replace('is', 'was'))    #Replace all is with was
+print(name.replace('is', 'was',1))   #Replace first is with was
+
+o/p:- abhinandan was a farmer and he was good boy
+abhinandan was a farmer and he is good boy
+-------------------------------------------------------------
+> a = 9
+a = 'akshay'
+print(a)
+
+akshay
+
+---------------------------------------------------------------
+>a = 999
+b = 'akshay'
+print(str(a)+b)
+
+999akshay
+-----------------------------------------------------------------
+> 
+a = 4
+b = 2
+print(a+b, a-b, a*b, a**b, a/b, a//b, a%b)
+
+6 2 8 16 2.0 2 0
+-----------------------------------------------------------------
+>
+x = 5
+y = 10
+
+print('The value of x is: {}'.format(x))
+print('The value of y is: {}'.format(y))
+-----------------------------------------------------------------
+> # Print multiplication table
+num = 12
+for i in range(1,11):
+    print(num, " * " ,i," = ",num*i)
+
+12  *  1  =  12
+12  *  2  =  24
+12  *  3  =  36
+12  *  4  =  48
+12  *  5  =  60
+12  *  6  =  72
+12  *  7  =  84
+12  *  8  =  96
+12  *  9  =  108
+12  *  10  =  120    
+
+----------------------------------------------------------
+> name = input('enter your name: ')
+print(name)
+type(name)
+
+o/p:- enter your name: abhi
+abhi
+Str
+
+name1 = int(input('enter your name: '))
+print(name1)
+type(name1)
+
+o/p:- o/p:- enter your name: abhi
+ ValueError: invalid literal for int() with base 10: 'abhi'
+
+number = input('enter your numaber: ')
+print(number)
+type(number)
+
+o/p:- enter your numaber: 22
+22
+str
+
+number = int(input('enter your numaber: '))
+print(number)
+type(number)
+
+o/p:- enter your numaber: 22
+22
+INT
+
+number = int(input('enter your numaber: '))
+print(number)
+type(number)
+
+o/p:- enter your numaber: 22.22  --- For decimal number dipla e have to ue Flaot keword
+ValueError: invalid literal for int() with base 10: '22.22'
+
+number = float(input('enter your numaber: '))
+print(number)
+type(number)
+
+o/p:- enter your numaber: 22.22
+22.22
+float
+
+number1 = float(input('enter your 1t numaber: '))
+print(number1)
+number2 = int(input('enter your 2nd numaber: '))
+print(number2)
+result = number1+number2
+print('result is: ', result)
+type(result)
+
+o/p:- enter your 1t numaber: 22.22
+22.22
+enter your 2nd numaber: 22
+22
+result is:  44.22
+float   ----- after summing up the INT & Flaot result tpe will be flaot
+
+number1 = eval(input('enter your 1t numaber: '))  ------ Eval will by default takes uer entered type value and give type reult
+print(number1)
+number2 = eval(input('enter your 2nd numaber: '))
+print(number2)
+result = number1+number2
+print('result is: ', result)
+type(result)
+
+o/p:- enter your 1t numaber: 22.22
+22.22
+enter your 2nd numaber: 22
+22
+result is:  44.22
+float
+-----------------------------------------------------------------
+> Python program to check Prime numbers
+i = int(input("enter number: "))
+#prime numbers are aways greater than 1
+if(i>1):
+    #check for factors
+    for j in range(2,i):
+        if(i % 2) == 0:
+            print(i, "is not a prime number")
+        else:
+            print(i,"is prime number")
+            print(j,"times",i//j,"is",i)
+            break
+else:
+        print(i,"is not prime number because its -ve")
+
+----------------------------------------------------------------------
+> # Python Program to find FACTORIAL of a number
+num = int(input("enter a number to calculate factorial: "))
+fact = 1
+# check if the number is negative, positive or zero
+if(num < 0):
+    print("Sorry, factorial does not exist for negative numbers")
+elif num == 0:
+    print("factorial of 0 is 1")
+else:    
+    for i in range(1, num+1):
+        fact = fact * i
+    print("factorial of",num, "is", fact)
+
+enter a number to calculate factorial: 5
+factorial of 5 is 120    
+----------------------------------------------------------------------        
+>
+----------------------------------------------------------------------
+> Working On LIST
+
+# python program to illustrate LIST
+# Create a empty LIST
+NUMS = []
+# Append data in LIST
+NUMS.append(21)
+NUMS.append(40.5)
+NUMS.append('AKSHAY')
+NUMS.append('I WORK FOR HCL')
+NUMS.append("SMART WORKER")
+print(NUMS)
+
+-------------------------------------------------------------------
+> Input and Output
+# Python program to illustrate getting input from user
+name = input("enter your name: ")
+print('HELLO', name)
+
+--------------------------------------------------------------------
+
+# Python program to getting integer input from user
+num1 = int(input("enter num1: "))
+num2 = int(input("enter num2: "))
+sum = num1 + num2
+multiplication = num1 * num2
+division = num1/num2
+print("entered numbers are", num1, num2)
+print("sum of numbers is:", sum)
+print("multiplication of numbers is:", multiplication)
+print("division of numbers is:", division)
+
+-----------------------------------------------------------------------
+
+# Python program to illusttate the Function
+def hello():
+    print("hello")
+    print("hello again")
+hello()
+    
+# calling function
+hello()
+
+>
+def hello_func():
+    print('i am good boy')
+
+hello_func()
+hello_func()
+hello_func() 
+
+o/p:-
+i am good boy
+i am good boy
+i am good boy
+
+> def add(x,y,z):
+    return(x+y+z)
+add(1,2,3)
+
+o/p:- 6
+-----------------------------------------------------------------------
+# Python program to illustrate Loop
+for i in range(5):
+    print(i)
+    
+0
+1
+2
+3
+4
+
+------------------------------------------------------------------------
+for i in range(1, 5): 
+    for j in range(i): 
+         print(i, end=' ') 
+    print()
+    
+1 
+2 2 
+3 3 3 
+4 4 4 4 
+
+--------------------------------------------------------------------------
+>  	Continue Statement
+# Prints all letters except 'e' and 's' 
+for letter in 'geeksforgeeks':  
+    if letter == 'e' or letter == 's': 
+         continue
+    print ('Current Letter :', letter) 
+    var = 10    
+Current Letter : g
+Current Letter : k
+Current Letter : f
+Current Letter : o
+Current Letter : r
+Current Letter : g
+Current Letter : k
+----------------------------------------------------------------------------
+> 	Break Statement
+for letter in 'geeksforgeeks':  
+  
+    # break the loop as soon it sees 'e'  
+    # or 's' 
+    if letter == 'e' or letter == 's': 
+         break
+  
+print ('Current Letter :', letter) 
+   
+Current Letter : e
+--------------------------------------------------------------------------
+> Pass Statement
+# An empty loop 
+for letter in 'geeksforgeeks': 
+    pass
+print ('Last Letter :', letter)
+
+Last Letter : s
+--------------------------------------------------------------------------
+> example of class
+class Test: 
+      
+    # A sample method  
+    def fun(self): 
+        print("Hello") 
+  
+# Driver code 
+obj = Test() 
+obj.fun()
+
+Hello
+---------------------------------------------------------------------------
+>
+# Python code to demonstrate  
+# del and assert 
+  
+# initialising list  
+a = [1, 2, 3] 
+  
+# printing list before deleting any value 
+print ("The list before deleting any value") 
+print (a) 
+  
+# using del to delete 2nd element of list 
+del a[1] 
+  
+# printing list after deleting 2nd element 
+print ("The list after deleting 2nd element") 
+print (a) 
+  
+# demonstrating use of assert 
+# prints AssertionError 
+assert 5 < 3, "5 is not smaller than 3"
+OUTPUT:
+The list before deleting any value
+[1, 2, 3]
+The list after deleting 2nd element
+[1, 3]
+Traceback (most recent call last):
+  File "<pyshell#37>", line 20, in <module>
+    assert 5 < 3, "5 is not smaller than 3"
+AssertionError: 5 is not smaller than 3
+-----------------------------------------------------------------------
+> Exception handling
+# Python program to handle simple runtime error 
+  
+a = [1, 2, 3] 
+try:  
+    print ("Second element = %d" %(a[1])) 
+  
+    # Throws error since there are only 3 elements in array 
+    print ("Fourth element = %d" %(a[3])) 
+  
+except IndexError: 
+    print ("An error occurred")
+    
+Second element = 2
+An error occurred
+
+> when uer enter invalid number then output printS the exception block 
+  thi exception block i ued to get the excact exception handler i any error
+try:
+    num1 = eval(input('enter 1t number=: '))
+    num2 = eval(input('enter 2nd number=: '))
+    result = num1 + num2
+    print('sum of value is:' , result)
+except:
+    print('Pleae enter valid number')
+    
+o/p:- enter 1t number=: 2
+enter 2nd number=: abc
+Pleae enter valid number
+
+try:
+    num1 = eval(input("enter 1t number= "))
+    num2 = eval(input("enter 2nd number= "))
+    result = num1/num2
+    print('result is:' , result)
+except(ZeroDiviionError,NameError,KeyboardInterrupt,yntaxError):
+    print('Pleae enter non zero value for the division')
+    print('Pleae enter valid number')
+    print('thank you and good bye')
+    print('valid value')    
+--------------------------------------------------------------------
+>
+# Program to handle multiple errors with one except statement 
+try :  
+    a = 3
+    if a < 4 : 
+  
+        # throws ZeroDivisionError for a = 3  
+        b = a/(a-3) 
+      
+    # throws NameError if a >= 4 
+    print ("Value of b = ", b)
+  
+# note that braces () are necessary here for multiple exceptions 
+except(ZeroDivisionError, NameError): 
+    print ("\nError Occurred and Handled")
+    
+    Error Occurred and Handled
+-------------------------------------------------------------------
+>
+# Program to depict else clause with try-except 
+  
+# Function which returns a/b 
+def AbyB(a , b): 
+    try: 
+        c = ((a+b) / (a-b)) 
+    except ZeroDivisionError: 
+        print ("a/b result in 0")
+    else: 
+        print (c) 
+  
+# Driver program to test above function 
+AbyB(2.0, 3.0) 
+AbyB(3.0, 3.0)
+
+-5.0
+a/b result in 0
+--------------------------------------------------
+# Python program to calculate range 
+  
+def findAge(current_date, current_month, current_year,  
+            birth_date, birth_month, birth_year): 
+  
+    # if birth date is greater then current birth_month 
+    # then donot count this month and add 30 to the date so 
+    # as to subtract the date and get the remaining days 
+      
+    month =[31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31] 
+    if (birth_date > current_date): 
+        current_month = current_month - 1
+        current_date = current_date + month[birth_month-1] 
+          
+          
+    # if birth month exceeds current month, then 
+    # donot count this year and add 12 to the 
+    # month so that we can subtract and find out 
+    # the difference  
+    if (birth_month > current_month):          
+        current_year = current_year - 1; 
+        current_month = current_month + 12; 
+          
+    # calculate date, month, year 
+    calculated_date = current_date - birth_date; 
+    calculated_month = current_month - birth_month; 
+    calculated_year = current_year - birth_year; 
+      
+    # print present age 
+    print ("Present Age")
+    print("Years:", calculated_year, "Months:",   
+         calculated_month, "Days:", calculated_date) 
+    findAge(current_date, current_month, current_year,  
+        birth_date, birth_month, birth_year) 
+
+RUN CODE AS:
+    # driver code  
+    current_date = 20
+    current_month = 10
+    current_year = 2019
+
+    # birth dd//mm//yyyy 
+    birth_date = 18
+    birth_month = 7
+    birth_year = 1991
+
+    findAge(current_date, current_month, current_year,  
+            birth_date, birth_month, birth_year) 
+---------------------------------------------------------------
+> 
+# To get currebt date
+print(datetime.date.today()) 
+------------------------------------------------------
+> Link ---https://www.youtube.com/watch?v=ZDa-Z5JzLYM
+# Python Classes and instances
+class employees:    # Defining employees class\
+    
+    # no_of_emps = 0 --- add this line to claculate no_of_emps
+    raise_amount = 1.04   
+    
+    def __init__(self, first, last, sal):    # __init__ is method of class
+        self.first = first                   # we can also fefine as self.first_name = first
+        self.last = last
+        self.sal = sal
+        self.email = first +'.'+ last +'@company.com'
+        
+        # employees.no_of_emps += 1  # add this line to claculate no_of_emps
+        
+        #To get fullname using another method
+    def fullname(self):
+        return '{} {}'.format(self.first, self.last) 
+    
+       #To get employee raise salary
+    def apply_raise(self):
+        self.sal = int(self.sal * employees.raise_amount) 
+        
+emp1 = employees('akshaykumar', 'patil', 60000)
+emp2 = employees('sarvesh', 'batli', 50000)
+---print(employees.no_of_emps) # claculate no_of_emps
+
+print(emp1.first, emp1.last)  #Employee fullname
+print(emp1.email)
+print(emp2.email)
+print(emp1.fullname())    #Employee fullname using method inside class 
+print (employees.fullname(emp1))
+print(emp1.sal)
+emp1.apply_raise()
+print (emp1.sal)
+print(emp2.sal)
+emp2.apply_raise()
+print (emp2.sal)
+
+----------------------------------------------------
+>
+# Class inheritance
+# Python Classes and instances
+class employees:    # Defining employees class\
+    
+    # no_of_emps = 0 --- add this line to claculate no_of_emps
+    raise_amount = 1.04   
+    
+    def __init__(self, first, last, sal):    # __init__ is method of class
+        self.first = first                   # we can also fefine as self.first_name = first
+        self.last = last
+        self.sal = sal
+        self.email = first +'.'+ last +'@company.com'
+        
+        # employees.no_of_emps += 1  # add this line to claculate no_of_emps
+        
+        #To get fullname using another method
+    def fullname(self):
+        return '{} {}'.format(self.first, self.last) 
+    
+       #To get employee raise salary
+    def apply_raise(self):
+        self.sal = int(self.sal * employees.raise_amount) 
+        
+class developer(employees):
+         raise_amount = 1.8 # to give 10% hike to developers without effecting other employees
+        
+##emp1 = employees('akshaykumar', 'patil', 60000)
+#emp2 = employees('sarvesh', 'batli', 50000)
+
+dev1 = developer('shashi', 'gunda', 50000)
+dev2 = developer('purna', 'sahoo', 50000)
+
+### print(emp1.sal)
+#emp1.apply_raise()
+#print (emp1.sal)
+#print(emp2.sal)
+#emp2.apply_raise()
+#print (emp2.sal) ###
+
+print(dev1.sal)
+dev1.apply_raise()
+print (dev1.sal)
+print(dev2.sal)
+dev2.apply_raise()
+print (dev2.sal)
+-------------------------------------------------------
+> #Fibonancii Sequence
+a, b = 0,1
+for i in range(0, 10):
+    print (a)
+    a, b = b , a+b
+    
+------------------------------------------------------
+>
+# Python code to calculate age
+import datetime
+ birth_year = int(input('enter your birth year: '))
+current_year = int(datetime.date.today().year)
+age = current_year - birth_year
+print(age) 
+        
+----------------------------------------------------------------
+>
+# Program to depict Raising Exception 
+  
+try:  
+    raise NameError("Hi there")  # Raise Error 
+except NameError: 
+    print ("An exception")
+    raise  # To determine whether the exception was raised or not
+    
+An exception
+Traceback (most recent call last):
+  File "<pyshell#42>", line 4, in <module>
+    raise NameError("Hi there")  # Raise Error
+NameError: Hi there
+-------------------------------------------------------------------
+> 
+# Python code to demonstrate working of 
+# global and non local 
+  
+#initializing variable globally 
+a = 10
+  
+# used to read the variable 
+def read(): 
+    print (a) 
+  
+# changing the value of globally defined variable 
+def mod1(): 
+    global a  
+    a = 5
+  
+# changing value of only local variable 
+def mod2(): 
+    a = 15
+  
+# reading initial value of a 
+# prints 10 
+read() 
+  
+# calling mod 1 function to modify value 
+# modifies value of global a to 5 
+mod1() 
+  
+# reading modified value 
+# prints 5 
+read() 
+  
+# calling mod 2 function to modify value 
+# modifies value of local a to 15, doesn't effect global value 
+mod2() 
+  
+# reading modified value 
+# again prints 5 
+read() 
+  
+# demonstrating non local  
+# inner loop changing the value of outer a 
+# prints 10 
+print ("Value of a using nonlocal is : ",end="") 
+def outer(): 
+    a = 5
+    def inner(): 
+        nonlocal a  
+        a = 10
+    inner() 
+    print (a) 
+  
+outer() 
+  
+# demonstrating without non local  
+# inner loop not changing the value of outer a 
+# prints 5 
+print ("Value of a without using nonlocal is : ",end="") 
+def outer(): 
+    a = 5
+    def inner(): 
+        a = 10
+    inner() 
+    print (a) 
+  
+outer()    
+
+10
+5
+5
+Value of a using nonlocal is : 10
+Value of a without using nonlocal is : 5
+----------------------------------------------------------------
+>  #153 = 1*1*1 + 5*5*5 + 3*3*3  // 153 is an Armstrong number.
+# Python program to check if the number provided by the user is an Armstrong number or not
+num = int(input("enter a number to check if its armstrong number: "))
+# initialize sum
+sum = 0
+# find the sum of the cube of each digit
+temp = num
+while temp >0:
+    digit = temp % 10
+    sum = sum + digit ** 3 # sum += sum % 
+    temp = temp //10       # temp //= 10
+if num == sum:
+    print(num,"is an Armstrong number")
+else:
+   print(num,"is not an Armstrong number")
+   
+enter a number to check if its armstrong number: 153
+153 is an Armstrong number
+----------------------------------------------------------------
+
+> Check Armstrong number of n digits
+# Python program to check if the number provided by the user is an Armstrong number or not
+num = int(input("enter a number to check if its armstrong number: "))
+# initialize sum
+order = len(str(num))
+sum = 0
+# find the sum of the cube of each digit
+temp = num
+while temp >0:
+    digit = temp % 10
+    sum = sum + digit ** order # sum += digit % 10 #len(num)
+    temp = temp //10       # temp //= 10
+if num == sum:
+    print(num,"is an Armstrong number")
+else:
+   print(num,"is not an Armstrong number")
+---------------------------------------------------------------
+>
+# Program to check Armstrong numbers in certain interval
+# to take input from user
+lower = int(input("Enter lower range: "))
+upper = int(input("Enter upper range: "))
+for num in range(lower, upper+1):
+    # order of number
+    order = len(str(num))
+    # initialize sum
+    sum = 0
+    # find the sum of the cube of each digit
+    temp = num
+    while temp > 0:
+        digit = temp % 10
+        sum += digit ** order
+        temp //= 10
+    if num == sum:
+        print(num)
+
+Enter lower range: 100
+Enter upper range: 200
+153
+-----------------------------------------------------------------
+>
+# Python program to swap two variables
+
+# To take input from the user
+# x = input('Enter value of x: ')
+# y = input('Enter value of y: ')
+
+x = 5
+y = 10
+
+# create a temporary variable and swap the values
+temp = x
+x = y
+y = temp
+
+print('The value of x after swapping: {}'.format(x))
+print('The value of y after swapping: {}'.format(y))
+
+The value of x after swapping: 10
+The value of y after swapping: 5
+------------------------------------------------------------------
+>
+# Python program to find the sum of natural numbers up to n where n is provided by user
+num = int(input("enter a numbaer: "))
+sum = 0
+while (num > 0):
+          sum = sum + num  #sum += num
+          num = num-1
+print("the sum is: ", sum)
+
+enter a numbaer: 10
+the sum is:  55
+-------------------------------------------------------------------
+> 
+i = 1
+while (i < 6):
+    print(i)
+    i = i + 1
+#print("the sum is: ", sum)
+
+1
+2
+3
+4
+5
+------------------------------------------------------------------------
+> # With the break statement we can stopt the loop even if the while condition is true.
+i = 1
+while (i < 6):
+    print(i)
+    if (i == 3):
+        break    
+    i = i + 1
+
+1
+2
+3
+-------------------------------------------------------------------------- 
+>
+adj = ["red", "big", "tasty"]
+fruits = ["apple","banana","cherry"]
+for x in adj:
+    for y in fruits:
+        print(x,y)   
+
+red apple
+red banana
+red cherry
+big apple
+big banana
+big cherry
+tasty apple
+tasty banana
+tasty cherry
+---------------------------------------------------------------------------
+> 
+# Python program to check if the input year is a leap year or not
+# To get year (integer input) from the user
+year = int(input("Enter a year: "))
+#year = 2000
+if (year % 4) == 0:
+   if (year % 100) == 0:
+       if (year % 400) == 0:
+           print("{0} is a leap year".format(year))
+       else:
+           print("{0} is not a leap year".format(year))
+   else:
+       print("{0} is a leap year".format(year))
+else:
+   print("{0} is not a leap year".format(year))
+
+2000 is a leap year
+2017 is not a leap year
+---------------------------------------------------------------------------   
+> 
+name1 = "akshaykumar"
+name2 = "patil"
+fullname = name1+name2   #'akshaykumarpatil'
+fullname = name1+ ' '+name2   #'akshaykumar patil'
+fullname[0]  #'a'
+fullname[10]   # 'r' --- index always starts with 0
+fullname[0:6]  #'akshay'
+fullname[6:]   #'kumar patil'
+
+shopping_list = "eggs","brush","paste","pen","deo"
+shopping_list  #('eggs', 'brush', 'paste', 'pen', 'deo')
+shopping_list1 = ["eggs","brush","paste","pen","deo"]
+shopping_list1 #['eggs', 'brush', 'paste', 'pen', 'deo']
+shopping_list1[0]  #'eggs'
+shopping_list1[1]  #'brush'
+shopping_list1[0:1] #['eggs']
+shopping_list1[0:2] #['eggs', 'brush']
+shopping_list1[1] = "milk"
+shopping_list1   #['eggs', 'milk', 'paste', 'pen', 'deo']
+del shopping_list1[4]
+shopping_list1   #['eggs', 'milk', 'paste', 'pen']
+len(shopping_list1)   #4
+shopping_list1.append("water")
+shopping_list1   #['eggs', 'milk', 'paste', 'pen', 'water']
+shopping_list1.append("water")
+shopping_list1   #['eggs', 'milk', 'paste', 'pen', 'water', 'water']
+shopping_list1.count("water")  #2
+
+array1 = [12,10,13]
+array2 = [30,40]
+array3 = array1+array2
+array3  #[12, 10, 13, 30, 40]
+max(array3)   #40
+min(array3)   #10
+
+#DICTIONARIES
+students = {"eric":15, "bob":14, "marry":16}  #KEY:VALUE Pair
+students["bob"]   #14
+students["bob"] = 13
+students["bob"]  #13
+len(students)   #3
+students.keys() #dict_keys(['eric', 'bob', 'marry'])
+students.values()  #dict_values([15, 14, 16])
+del students["bob"]
+students    #{'eric': 15, 'marry': 16}
+students.clear()   #Clear dictionary
+students    #{}
+del students  #delete dictionary
+students1 = {"singh":10, "mike":17, "devid":16}
+students1   #{'devid': 16, 'mike': 17, 'singh': 10}
+students.update(students1)
+students     #{'bob': 14, 'devid': 16, 'eric': 15, 'marry': 16, 'mike': 17, 'singh': 10}
+
+
+#TUPLES
+#-- Tuples and List almost same, but with tuple data cannot change
+tpl1 = ("mean",24,"mode","median")
+tpl1.append("stat")  # AttributeError: 'tuple' object has no attribute 'append'
+del tpl1["mean"]     #TypeError: 'tuple' object does not support item deletion
+
+---------------------------------------------------------
+> for i in range(0,5):
+    print(i)
+0
+1
+2
+3
+4    
+
+students   #{'bob': 14, 'devid': 16, 'eric': 15, 'marry': 16, 'mike': 17, 'singh': 10}
+for i in students:
+    print(i)
+eric
+bob
+marry
+singh
+mike
+devid
+
+shopping_list = "eggs","brush","paste","pen","deo"
+for i in shopping_list:
+    print(i)
+eggs
+brush
+paste
+pen
+deo
+
+shopping_list1 = ["eggs","brush","paste","pen","deo"]
+for i in shopping_list1:
+    print(i)
+eggs
+brush
+paste
+pen
+deo
+
+tple = (23, "abd", 45)
+for i in tple:
+    print(i)
+23
+abd
+45
+------------------------------
+> #Print even numners between 0 to 101
+for i in range(0,101,2):
+    print(i)
+ 
+> #Print numners from 100 to 1
+for i in range(100,0,-1):
+    print(i) 
+----------------------------------------------------
+> Python program to print 1 to 99
+counter = 0
+while counter <100:
+    print(counter)
+    counter = counter + 1
+-----------------------------------------------------    
+> Pyhton program to use Break
+counter = 0
+while counter <100:
+    if counter == 4:
+        break
+    print(counter)
+    counter = counter + 1
+0
+1
+2
+3    
+-----------------------------------------------------
+> Pyhton program to use Break & pass
+counter = 0
+while counter <100:
+    if counter == 4:
+        break
+    else:
+        pass        
+    print(counter)
+    counter = counter + 1    
+0
+1
+2
+3    
+--------------------------------------------------------
+> for i in "python":
+    if  i == "h":
+        continue
+    print(i)
+p
+y
+t
+o
+n
+---------------------------------------------------------
+> def addnum(num1, num2):
+    return (num1+num2)
+
+addnum(2, 3)
+5
+----------------------------------------------------------
+> dir(["abc"])
+it will list the all functions we can use on character dataype "abc"
+we can also use like
+tiger = "i am tiger"
+dir([tiger])
+
+dir([123])    
+it will list the all functions we can use on number dataype "abc"
+-----------------------------------------------------------
+> eval statement can evaluate some simple python expressions
+eval("print('akshay')") 
+eval("2+3")
+-----------------------------------------------------------
+        CLASSES
+> class students:
+    def __init__(self, name, age, grade):
+        self.name = name
+        self.age = age
+        self.grade = grade
+ 
+student1 = students("abhi", 25, "A")
+student1.name
+'abhi'
+student1.age
+25
+student1.grade
+'A' 
+
+> functions inside class
+class students:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    def displaystudent(self):
+        return("Student name is " + self.name + " and age is " + str(self.age))
+  
+student1 = students("abhi", 25)
+student1.displaystudent()
+'Student name is abhi and age is 25'  
+
+> hasattr -  checks to see does the object have specific attribute
+hasattr(student1, "name") 
+TRUE
+hasattr(student1, "age")
+TRUE
+hasattr(student1, "class")
+FALSE
+> setattr - Set specific attributr to object
+setattr(student1, "class", "8th") --- here we set the "class" attribute to object student 
+hasattr(student1, "class")
+TRUE
+> getattr - get the value assigned to attribute
+getattr(student1, "name")
+'abhi'
+getattr(student1, "class")
+'8th'
+> delattr - 
+delattr(student1, "class")
+hasattr(student1, "class")
+FALSE 
+
+-----------------------------------------------------------------------------
+                         Working with Files
+
+> reading from file
+Create a notepad file and save it in path C:\Users\AKSHAY\Anaconda3
+To get the current directory
+import os
+os.getcwd()
+
+file1 = open("testfile.txt", "r")
+file1.read()
+'This is a Pyhton File.\n\nmy computor is windows 7.'
+file1.read() --- When we execute again it will give null as output, because cursor will be end of the line 
+when we run file1.read() first time, it will try reading from end.
+file1.tell()  --- tells where is cursor position
+file1.seek(0,0) ---- it will set the cursor position to begining of the file
+file1.read()  --- as cursor is again at starting position in file, it will display all inside the file
+'This is a Pyhton File.\n\nmy computor is windows 7.'
+file1.seek(0,0)
+file1.read(21) -- reads 21 lines insdie the file
+'This is a Pyhton File'
+file1.read(21)  -- reads 21 lines insdie the file, as cursor was at 21st position, it will start reading from 21st postion till next 21 positions
+'.\n\nmy computor is win'
+
+> writing to file
+f = open("testfile.txt", "w")
+f.read()  --- we have given write permission to file hence its thous error
+io.UnsupportedOperation: not readable
+f.write("i have entered some text, lets see if it works")
+f.close()
+f = open("testfile.txt", "r")
+f.read()
+'i have entered some text, lets see if it works'
+
+> Appending to files
+f = open("testfile.txt", "a")
+f.write("\n this is my appending text to testfile")
+f.close()
+f = open("testfile.txt", "r")
+f.read()
+('i have entered some text, lets see if it works\n'
+ ' this is my appending text to testfile')
+ 
+f = open("testfile.txt", "a+")  --- opens file for both appending and reading
+f.write("\n inserted something to check both read and write")
+f.seek(0,0)
+f.read()
+('i have entered some text, lets see if it works\n'
+ ' this is my appending text to testfile\n'
+ ' inserted something to check both read and write\n'
+ ' inserted something to check both read and write')
+ 
+> Coping from one file to other file
+ufn = input("enter your filename:- ")
+enter your filename:- testfile
+ufn = ufn + ".txt"
+file1 = open(ufn, "r")
+file2 = open("copiedfile.txt", "w")
+file2.write(file1.read())
+file1.close()
+file2.close()
+file2 = open("copiedfile.txt", "r")
+file2.read()
+('i have entered some text, lets see if it works\n'
+ ' this is my appending text to testfile\n'
+ ' inserted something to check both read and write\n'
+ ' inserted something to check both read and write')
+
+----------------------------------------------------------------
+> RANDINT  --- generates random number between passed parameters x&y 
+import random
+print(random.randint(0,100))
+print(random.randint(0,100))
+18
+print(random.randint(0,100))
+41
+print(random.randint(0,100))
+58
+
+> 
+import random
+food = ["pizza","burger","cake"]
+print(random.choice(food))
+cake
+print(random.choice(food))
+cake
+print(random.choice(food))
+burger
+> print(random.shuffle(food)) --- it shuffules the items
+food
+['pizza', 'cake', 'burger']
+
+------------------------------------------------------------------
+> Guessing Game
+#GuessingGame
+import random
+comguess = random.randint(1,100)
+while True:
+    userguess = int(input("guess a number between 1:100: "))
+    if userguess > comguess:
+        print("Guess Lower")
+    elif userguess < comguess:
+        print("Guess Higher")
+    else:
+        print("Congrats, you guessed correct number")
+        break
+
+guess a number between 1:100: 60
+Guess Higher
+guess a number between 1:100: 90
+Guess Higher
+guess a number between 1:100: 95
+Guess Lower
+guess a number between 1:100: 92
+Guess Higher
+guess a number between 1:100: 93
+Congrats, you guessed correct number        
+
+---------------------------------------------------------------------
+           Sys Module
+import sys
+sys.version
+'3.7.3 (default, Mar 27 2019, 17:13:21) [MSC v.1915 64 bit (AMD64)]'
+
+> stdin --- standard input
+import sys
+inputstatement = sys.stdin.readline()
+this ststement is goign to be read bt the function we just define
+inputstatement
+'this ststement is goign to be read bt the function we just define\n'
+
+inputstatement = sys.stdin.readline(10)
+this ststement is goign to be read bt the function we just define
+inputstatement
+'this state'
+
+----------------------------------------------------------------------
+            Time Module
+> time.asctime()  
+'Sat Aug  3 14:05:36 2019'
+> tup = (2000, 10, 15, 8, 45, 12, 6, 0,0) --- passing our own time
+time.asctime(tup)
+'Sun Oct 15 08:45:12 2000'
+> time.localtime()
+'time.struct_time(tm_year=2019, tm_mon=8, tm_mday=3, tm_hour=14, tm_min=8, tm_sec=12, tm_wday=5, tm_yday=215, tm_isdst=0)'
+> 
+t = time.localtime()
+yesr = t[0]
+month = t[1]
+day = t[2]
+print(year)
+2019
+print(month)
+8
+print(day)
+3
+
+> print(str(day)+"/"+str(month)+"/"+str(year))
+3/8/2019
+
+> to slow down the outpout by 1 seconf every time
+for i in range(0,5):
+    print(i)
+    time.sleep(1)
+    
+> To check how long program runs
+import time
+def numbers(max):
+    time1 = time.time()
+    for i in range(0, max):
+        print(i)
+        time2 = time.time()
+        print(str(time2-time1))
+        
+numbers(100)
+
+-------------------------------------------------------------------
+                TURTLE MODULE
+> its used for graphical representation
+import turtle
+turtle
+<module 'turtle' from 'C:\\Users\\AKSHAY\\Anaconda3\\lib\\turtle.py'>                
+
+> To create square
+t = turtle.pen()   ------- it will open the drawing window 
+t.forward(50)
+t.left(90)
+t.forward(50)
+t.left(90)
+t.forward(50)
+t.left(90)
+        
+> To create octal        
+import turtle
+t = turtle.pen()
+for i in (0,8):
+    t.forward(50)
+    t.left(45)
+    
+t.rest() --- reset the grapgh
+for i in (0,38):
+    t.forward(100)
+    t.left(175)
+
+t.rest()    
+for i in (1,20):
+    t.forward(100)
+    t.left(95)
+
+up ---> takes pen niddle up from grapgh (it will not draw)
+down ---> it will bing pen down and draw
+
+t.rest()    
+for i in (1,20):
+    t.forward(100)
+    t.left(95)
+t.up()
+t.forward(100)
+t.forward(40)
+for i in (1,20):
+    t.forward(100)
+    t.left(95)
+t.down()
+for i in (1,20):
+    t.forward(100)
+    t.left(95)
+    
+                
+                Using Functions in TURTLE
+> Draw Squere
+import turtle
+t = tutle.pen()
+def square(side)
+    for i in range(0,5):
+        t.forward(side)
+        t.left(90)
+square(10)
+square(30)
+
+> Draw Circle
+import turtle
+t = tutle.pen()
+def circle(radius)
+    t.circle(radius)
+circle(10)
+circle(50)
+
+---------------------------------------------------------
+                WEB CROLLING
+        
+learn web scrolling and re module from URL : - https://www.youtube.com/watch?v=b76SNj2Dej0&t=19871s
+
+        
+
+------------------------------------------------------
+            PANDAS
+            
+import pandas as pd # Import Library 
+# program to create series with sacalr data
+data = [1,2,3,4,5,6,7,8,9]
+# creating series with default index values
+s = pd.Series(data)
+print(s)
+or print (s[0:])
+0    1
+1    2
+2    3
+3    4
+4    5
+5    6
+6    7
+7    8
+8    9
+dtype: int64
+# To print perticular Index value
+print (s[0])
+0
+print (s[1])
+1
+print (s[:3]) # To retrive first 3 elements
+print (s[3:]) #To retrive the elements from 3 rd index value
+3    4
+4    5
+5    6
+6    7
+7    8
+8    9
+print (s[-3:]) #To retrive the last 3 values
+6    7
+7    8
+8    9
+
+
+
+# predefined index values 
+Index =['a', 'b', 'c', 'd', 'e', 'f', 'g','h','i'] 
+# Creating series with predefined index values 
+si = pd.Series(data, Index)
+print(si)
+a    1
+b    2
+c    3
+d    4
+e    5
+f    6
+g    7
+h    8
+i    9
+dtype: int64
+
+s = pd.Series([1,2,3,4,5], index = ['a','b','c','d','e'])
+
+#retrieve a single element
+print (s['a'])
+1
+
+#retrieve multiple element
+print (s[['a','b','c','d']])
+a    1
+b    2
+c    3
+d    4
+
+# program to create dictionary series
+dictionary = {'a':1,'b':2,'c':3,'d':4,'e':5}
+# Creating series of Dictionary type 
+sd = pd.Series(dictionary)
+print(sd)
+a    1
+b    2
+c    3
+d    4
+e    5
+dtype: int64
+
+# program to create ndarrays
+data = [[1,2,3],[4,5,6]]
+# Creating series of 2darray 
+snd = pd.Series(data)
+print(snd)
+0    [1, 2, 3]
+1    [4, 5, 6]
+dtype: object
+
+DataFrames:
+DataFrames is two-dimensional(2-D) data structure defined in pandas which consists of rows and columns.
+# Program to create Dataframe
+import pandas as pd #import pandas library
+a = pd.DataFrame(data)  # Create DataFrame with Data 
+
+Empty DataFrame
+Columns: []
+Index: []
+
+Here, Data can be:
+
+1. One or more dictionaries
+2. One or more Series
+3. 2D-numpy Ndarray
+
+data = [['Alex',10],['Bob',12],['Clarke',13]]
+df = pd.DataFrame(data,columns=['Name','Age'],dtype=float)
+print (df)
+      Name     Age
+0     Alex     10.0
+1     Bob      12.0
+2     Clarke   13.0
+
+data = {'Name':['Tom', 'Jack', 'Steve', 'Ricky'],'Age':[28,34,29,42]}
+df = pd.DataFrame(data)
+print (df)
+    Name  Age
+0    Tom   28
+1   Jack   34
+2  Steve   29
+3  Ricky   42
+       
+import pandas as pd
+data = {'Name':['Tom', 'Jack', 'Steve', 'Ricky'],'Age':[28,34,29,42]}
+df = pd.DataFrame(data, index=['rank1','rank2','rank3','rank4'])
+print (df)
+        Name  Age
+rank1    Tom   28
+rank2   Jack   34
+rank3  Steve   29
+rank4  Ricky   42
+
+data = [{'a': 1, 'b': 2},{'a': 5, 'b': 10, 'c': 20}]
+df = pd.DataFrame(data)
+print (df)
+   a   b     c
+0  1   2   NaN
+1  5  10  20.0
+
+data = [{'a': 1, 'b': 2},{'a': 5, 'b': 10, 'c': 20}]
+df = pd.DataFrame(data, index=['first', 'second'])
+print (df)
+        a   b     c
+first   1   2   NaN
+second  5  10  20.0
+
+#With two column indices, values same as dictionary keys
+df1 = pd.DataFrame(data, index=['first', 'second'], columns=['a', 'b'])
+print(df1)
+        a   b
+first   1   2
+second  5  10
+
+#With two column indices with one index with other name
+df2 = pd.DataFrame(data, index=['first', 'second'], columns=['a', 'b1'])
+print(df2)
+        a  b1
+first   1 NaN
+second  5 NaN
+
+d = {'one' : pd.Series([1, 2, 3], index=['a', 'b', 'c']),
+   'two' : pd.Series([1, 2, 3, 4], index=['a', 'b', 'c', 'd'])}
+
+df = pd.DataFrame(d)
+print (df)
+   one  two
+a  1.0    1
+b  2.0    2
+c  3.0    3
+d  NaN    4
+
+print (df ['one'])
+a    1.0
+b    2.0
+c    3.0
+d    NaN
+
+# Adding a new column to an existing DataFrame object with column label by passing new series
+
+print ("Adding a new column by passing as Series:")
+df['three']=pd.Series([10,20,30],index=['a','b','c'])
+print (df)
+
+Adding a new column by passing as Series:
+   one  two  three
+a  1.0    1   10.0
+b  2.0    2   20.0
+c  3.0    3   30.0
+d  NaN    4    NaN
+
+print ("Adding a new column using the existing columns in DataFrame:")
+df['four']=df['one']+df['three']
+print (df)
+
+Adding a new column using the existing columns in DataFrame:
+   one  two  three  four
+a  1.0    1   10.0  11.0
+b  2.0    2   20.0  22.0
+c  3.0    3   30.0  33.0
+d  NaN    4    NaN   NaN
+
+# Deleting the DataFrame
+print ("Deleting the first column using DEL function:")
+del df['one']
+print (df)
+Deleting the first column using DEL function:
+   two  three  four
+a    1   10.0  11.0
+b    2   20.0  22.0
+c    3   30.0  33.0
+d    4    NaN   NaN
+
+# using pop function
+print ("Deleting another column using POP function:")
+df.pop('two')
+print (df)
+Deleting another column using POP function:
+   three  four
+a   10.0  11.0
+b   20.0  22.0
+c   30.0  33.0
+d    NaN   NaN
+
+#Multiple rows can be selected using ‘ : ’ operator.
+d = {'one' : pd.Series([1, 2, 3], index=['a', 'b', 'c']), 
+   'two' : pd.Series([1, 2, 3, 4], index=['a', 'b', 'c', 'd'])}
+
+df = pd.DataFrame(d)
+print (df[2:4])
+   one  two
+c  3.0    3
+d  NaN    4
+
+#addition of rows
+df = pd.DataFrame([[1,2], [3,4]], columns = ['a', 'b'])
+df2 = pd.DataFrame([[5,6], [7,8]], columns = ['a', 'b'])
+df = df.append(df2)
+print (df)
+   a  b
+0  1  2
+1  3  4
+0  5  6
+1  7  8
+
+# Drop rows with label 0
+df = df.drop(0)
+print(df)
+   a  b
+1  3  4
+1  7  8
+
+
+       
+Code : When Data is Dictionaries       
+# Program to create dataframe with 2-dictionaries
+dict1 ={'a':1, 'b':2, 'c':3, 'd':4}        # Define Dictionary 1 
+dict2 ={'a':5, 'b':6, 'c':7, 'd':8, 'e':9} # Define Dictionary 2 
+data = {'first':dict1, 'second':dict2} #Define Data with dict1 and dict2 
+df = pd.DataFrame(data)  # Create DataFrame 
+print(df)
+   first  second
+a    1.0       5
+b    2.0       6
+c    3.0       7
+d    4.0       8
+e    NaN       9
+
+Code: When Data is Series
+# Program to create Dataframe of three series  
+
+s1 = pd.Series([1, 3, 4, 5, 6, 2, 9])           # Define series 1 
+s2 = pd.Series([1.1, 3.5, 4.7, 5.8, 2.9, 9.3]) # Define series 2 
+s3 = pd.Series(['a', 'b', 'c', 'd', 'e'])     # Define series 3 
+  
+  
+Data ={'first':s1, 'second':s2, 'third':s3} # Define Data 
+dfseries = pd.DataFrame(Data)              # Create DataFrame 
+print(dfseries)
+   first  second third
+0      1     1.1     a
+1      3     3.5     b
+2      4     4.7     c
+3      5     5.8     d
+4      6     2.9     e
+5      2     9.3   NaN
+6      9     NaN   NaN
+
+Code: When Data is 2D-numpy ndarray
+Note: One constraint has to be maintained while creating DataFrame of 2D arrays – Dimensions of 2D array must be same.
+# Program to create DataFrame from 2D array
+d1 = [[1,2,3],[4,5,6]]  # Define 2d array 1
+d2 = [[2,4,6],[8,10,12]]  # Define 2d array 2 
+Data = {'first':d1, 'second':d2}  # Define Data 
+df2d = pd.DataFrame(Data)  # Create DataFrame 
+print(df2d)
+       first       second
+0  [1, 2, 3]    [2, 4, 6]
+1  [4, 5, 6]  [8, 10, 12]
+
+import pandas as pd
+dict = {"state": ["karnataka","maharastra","tamilnadu","andra"], 
+       "Capital": ["bangalore", "mubai","channai","vishakpattan"],
+       "area": [120.5,135.6,200.5,300.5],
+       "polpulation": [1234,3456,4567,5456]}
+datas = pd.DataFrame(dict)
+print(datas)
+        state       Capital   area  polpulation
+0   karnataka     bangalore  120.5         1234
+1  maharastra         mubai  135.6         3456
+2   tamilnadu       channai  200.5         4567
+3       andra  vishakpattan  300.5         5456
+
+ #If you would like to have different index values
+datas.index = ["st","ca","ar","po"]
+# Print out datas with new index values
+print(datas)
+         state       Capital   area  polpulation
+st   karnataka     bangalore  120.5         1234
+ca  maharastra         mubai  135.6         3456
+ar   tamilnadu       channai  200.5         4567
+po       andra  vishakpattan  300.5         5456
+
+--------------------------------------------------
+> Calendar
+import calendar
+cal = calendar.month(2020,1)
+print(cal)
+
+o/p:-    January 2020
+Mo Tu We Th Fr Sa Su
+       1  2  3  4  5
+ 6  7  8  9 10 11 12
+13 14 15 16 17 18 19
+20 21 22 23 24 25 26
+27 28 29 30 31
+
+calendar.isleap(2020)
+o/p:- True
+
+-------------------------------------
+> How to write to a file
+f = open("D:\\python_code\\funny_text", "a")
+f.write(" I love ython \n I love Java")
+f.close()
+
+-----------------------------------------------------
+                regular expressions
+> To verify PAN Number
+import re
+n = "333-444-ABCDEF"
+if re.search("\d{3}-\d{3}-\w{6}", n):
+             print("it's a PAN Number")
+else:
+             print("it's not a PAN Number")
+
+o/p:- it's a PAN Number
+-----------------------------------------------------
+> import re
+allname = ("my name is akshay and whats your name?")
+for i in re.finditer("name", allname):
+    loctup = i.span()   #Indexing Value
+    print(loctup)
+
+
+-----------------------------------------------------
+            NUMPY
+
+import numpy as np
+import matplotlib.pyplot as plt
+x_y = [10,12,33,45,67,66,45]
+y = np.array(x_y)
+type(y)
+y[0:5]
+y.shape  #(7,)
+y>10     #array([False,  True,  True,  True,  True,  True,  True])
+y[y>12]  #array([33, 45, 67, 66, 45])
+y*2      #array([ 20,  24,  66,  90, 134, 132,  90])
+y**2     #array([ 100,  144, 1089, 2025, 4489, 4356, 2025], dtype=int32)
+y[y%2!=0]    #array([33, 45, 67, 45])
+np.array(y).shape #(7,)
+x = [1,2,3,4,5,6]
+y = [7,8,9,10,11,12]
+np.array(x).shape   #(6,)
+np.array(y).shape   #(6,)
+z= np.array([x,y])
+z = z.reshape(4,3)
+z.shape  #(4, 3)
+
+z[:,1:]
+o/p: array([[ 2,  3],
+       [ 5,  6],
+       [ 8,  9],
+       [11, 12]])
+
+np.mean(z)    #6.5
+np.median(z)  #6.5
+np.std(z)     #3.452052529534663
+np.var(z)     #11.916666666666666       
+            
+----------------------------
+> print(1 << 2) & print(pow(2,2)) are same
+
+> Probability of getting 2 heads
+
+# Naive approach in Python3  
+# to find probability of 
+# at least k heads 
+MAX=21
+fact=[0]*MAX
+# Returns probability of  
+# getting at least k 
+# heads in n tosses. 
+def probability(k, n): 
+    ans = 0
+    for i in range(k,n+1): 
+  
+        # Probability of getting exactly i 
+        # heads out of n heads 
+        ans += fact[n] / (fact[i] * fact[n - i]) 
+  
+    # Note: 1 << n = pow(2, n) 
+    ans = ans / (1 << n) 
+    return ans 
+  
+def precompute(): 
+      
+    # Preprocess all factorial  
+    # only upto 19, 
+    # as after that it  
+    # will overflow 
+    fact[0] = 1
+    fact[1] = 1
+  
+    for i in range(2,20): 
+        fact[i] = fact[i - 1] * i 
+  
+# Driver code 
+if __name__=='__main__': 
+    precompute() 
+  
+    # Probability of getting 2  
+    # head out of 3 coins 
+    print(probability(2, 3)) 
+  
+    # Probability of getting  
+    # 3 head out of 6 coins 
+    print(probability(3, 6)) 
+  
+    # Probability of getting  
+    # 12 head out of 18 coins 
+    print(probability(12, 18)) 
+      
+# This code is contributed by  
+# mits 
+
+o/p:- 
+0.5
+0.65625
+0.1189422607421875
+
+--------------------------------------
+=>
+print("Welcome! \nType \"exit\" to quit")
+operator = input("enter operator > ") 
+valid = True
+while operator != "exit":
+    if operator != '+' and operator != '-':
+        print("Invalid Operator")
+        operator = input("enter valid operator > ")
+        valid = False
+    else:    
+        valid = True
+    
+    if valid:
+        operand_1 = int(input("operand1: "))
+        operand_2 = int(input("operand2: "))
+        if operator == '+':
+            print("=>", operand_1 + operand_2)
+        elif operator == '-':
+            print("=>", operand_1 - operand_2)
+        
+    operator = input("enter operator > ")     
+    
+print("Bye!")        
+-----------------------------------------------			
